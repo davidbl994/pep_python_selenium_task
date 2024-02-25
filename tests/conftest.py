@@ -2,7 +2,6 @@ import ssl
 import pytest
 from selenium import webdriver
 import chromedriver_autoinstaller
-from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -19,11 +18,22 @@ def driver():
     # Create the Webdriver with the specified
     driver = webdriver.Chrome(options=chrome_options)
 
-    driver.implicitly_wait(10)
+    driver.implicitly_wait(5)
     yield driver
-    driver.close()
     driver.quit()
 
 @pytest.fixture
-def url():
+def home_url():
     return 'https://www.greyp.com/en/'
+
+@pytest.fixture
+def epower_url():
+    return 'https://www.greyp.com/en/epower/'
+
+@pytest.fixture
+def esuv_url():
+    return 'https://www.greyp.com/en/esuv/'
+
+@pytest.fixture
+def comparison_url():
+    return 'https://www.greyp.com/en/comparator/'
