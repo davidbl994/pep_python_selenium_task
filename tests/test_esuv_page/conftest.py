@@ -24,14 +24,6 @@ def driver():
     driver.quit()
 
 @pytest.fixture
-def home_url():
-    return 'https://www.greyp.com/en/'
-
-@pytest.fixture
-def epower_url():
-    return 'https://www.greyp.com/en/epower/'
-
-@pytest.fixture
 def esuv_url():
     return 'https://www.greyp.com/en/esuv/'
 
