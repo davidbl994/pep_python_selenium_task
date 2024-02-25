@@ -43,7 +43,7 @@ class ESuvPage:
         actions.move_to_element(t51_bike_checkbox).click().perform()
 
         # Wait for the URL to contain the parameters ?bike1=77&bike2=39
-        WebDriverWait(self.driver, 10).until(EC.url_contains("?bike1=77&bike2=39"))
+        WebDriverWait(self.driver, 20).until(EC.url_contains("?bike1=77&bike2=39"))
 
         return self.driver.current_url  # Return the current URL
 
