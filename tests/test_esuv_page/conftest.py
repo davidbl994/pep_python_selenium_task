@@ -6,6 +6,11 @@ from selenium.webdriver.chrome.options import Options
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
+# CONSTANTS
+
+ESUV_PAGE = 'https://www.greyp.com/en/esuv/'
+COMPARISON_PAGE = 'https://www.greyp.com/en/comparator/'
+
 @pytest.fixture
 def driver():
     chromedriver_autoinstaller.install()
@@ -25,8 +30,8 @@ def driver():
 
 @pytest.fixture
 def esuv_url():
-    return 'https://www.greyp.com/en/esuv/'
+    return ESUV_PAGE
 
 @pytest.fixture
 def comparison_url():
-    return 'https://www.greyp.com/en/comparator/'
+    return COMPARISON_PAGE
