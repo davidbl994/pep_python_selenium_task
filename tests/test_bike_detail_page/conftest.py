@@ -6,6 +6,10 @@ from selenium.webdriver.chrome.options import Options
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
+# CONSTANTS
+
+EPOWER_PAGE = 'https://www.greyp.com/en/epower/'
+
 @pytest.fixture
 def driver():
     chromedriver_autoinstaller.install()
@@ -25,4 +29,4 @@ def driver():
 
 @pytest.fixture
 def epower_url():
-    return 'https://www.greyp.com/en/epower/'
+    return EPOWER_PAGE
