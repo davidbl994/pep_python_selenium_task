@@ -6,6 +6,13 @@ from selenium.webdriver.chrome.options import Options
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
+# CONSTANTS
+
+HOME_PAGE = 'https://www.greyp.com/en/'
+EPOWER_PAGE = 'https://www.greyp.com/en/epower/'
+ESUV_PAGE = 'https://www.greyp.com/en/esuv/'
+COMPARISON_PAGE = 'https://www.greyp.com/en/comparator/'
+
 @pytest.fixture
 def driver():
     chromedriver_autoinstaller.install()
@@ -17,6 +24,7 @@ def driver():
 
     # Create the Webdriver with the specified
     driver = webdriver.Chrome(options=chrome_options)
+    driver.set_window_size(1920, 1080)
 
     driver.implicitly_wait(5)
     yield driver
@@ -24,16 +32,16 @@ def driver():
 
 @pytest.fixture
 def home_url():
-    return 'https://www.greyp.com/en/'
+    return HOME_PAGE
 
 @pytest.fixture
 def epower_url():
-    return 'https://www.greyp.com/en/epower/'
+    return EPOWER_PAGE
 
 @pytest.fixture
 def esuv_url():
-    return 'https://www.greyp.com/en/esuv/'
+    return ESUV_PAGE
 
 @pytest.fixture
 def comparison_url():
-    return 'https://www.greyp.com/en/comparator/'
+    return COMPARISON_PAGE
