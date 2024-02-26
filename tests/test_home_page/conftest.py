@@ -6,6 +6,10 @@ from selenium.webdriver.chrome.options import Options
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
+# CONSTANTS
+
+HOME_PAGE = 'https://www.greyp.com/en/'
+
 @pytest.fixture
 def driver():
     chromedriver_autoinstaller.install()
@@ -25,4 +29,4 @@ def driver():
 
 @pytest.fixture
 def home_url():
-    return 'https://www.greyp.com/en/'
+    return HOME_PAGE
